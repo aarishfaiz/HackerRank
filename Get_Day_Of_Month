@@ -1,0 +1,27 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+import java.time.LocalDate;
+import java.time.format.TextStyle;
+import java.util.Locale;
+
+class Codechef
+{
+    public static String getDay(int year, int month, int date) {
+        LocalDate day = LocalDate.of(year, month, date);
+        
+        return day.getDayOfWeek().getDisplayName(TextStyle.FULL,Locale.ENGLISH).toUpperCase();
+    }
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	    Scanner sc = new Scanner(System.in);
+	    
+	    int year = sc.nextInt();
+	    int month = sc.nextInt();
+	    int date = sc.nextInt();
+	    
+	    System.out.println(getDay(year, month, date));
+
+	}
+}
